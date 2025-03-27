@@ -41,6 +41,9 @@ h1,h2,h3,h4,h5,h6{
     font-family: "Roboto", sans-serif;
     /*font-weight: 800;*/
 }
+a {
+    text-decoration: none; /* Verwijdert de onderstreping van alle links */
+}
 
 /* ------------------------------- 2. Typography ----------------------------------- */
 
@@ -53,8 +56,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border:2px solid black;
-    margin: 0 20px 20px 20px;
+    /*margin: 0 20px 20px 20px;*/
     max-width: 1800px;
 }
 .inner-container{
@@ -74,6 +76,7 @@ button{
     border: none;
     color: var(--Lichtgrijs);
     padding:  12px 24px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15); /* Schaduw voor de image-wrapper */
 }
 button:hover{
     cursor: pointer;
@@ -86,7 +89,6 @@ button:hover{
     background-color: var(--Paars);
 }
 .header-content-wrapper{
-    border: 2px dashed green;
     display: flex;
     max-width: 600px;
     flex-direction: column;
@@ -118,7 +120,6 @@ h1, h3 {
     justify-content: space-between;
 }
 .header-navigation a {
-    text-decoration: none;
     color: var(--Lichtgrijs);
     font-weight: bold;
 }
@@ -129,9 +130,8 @@ h1, h3 {
     padding: 100px; /* Voegt ruimte binnen de container toe */
     filter: invert(100%) sepia(100%) saturate(500%) hue-rotate(200deg);
 }
-/*introductie sectie*/
+/* --------------- 4.2 Introduction ------------------- */
 .inner-container--introductie-tekst{
-    border: 2px dashed green;
     display: flex;
     max-width: 600px;
     flex-direction: column;
@@ -146,7 +146,6 @@ h1, h3 {
     color: var(--Blauw);
 }
 
-
 /* kleine tekst voor de vraag */
 .inner-container--introductie-tekst .contact-text {
     font-size: 10px;
@@ -154,16 +153,17 @@ h1, h3 {
     margin-top: 60px;
     color: var(--Zwart);
 }
+.inner-container--introductie-tekst .a {
+    color: var(--Paars);
 
-/* --------------- 4.2 Introduction ------------------- */
-/*projecten section*/
-.project-section {
-    display: flex;
-    flex-direction: column;  /* Artikelen onder elkaar */
-    gap: 40px;  /* Ruimte tussen de artikelen */
 }
 
-.inner-container-project{
+/*projecten section*/
+.projecten-section{
+    background-color: var(--Lichtpaars);
+}
+
+.inner-container-projecten{
     flex-basis: 1200px;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -171,33 +171,29 @@ h1, h3 {
     flex-wrap: wrap;
     justify-content:space-evenly;
     gap:100px;
-    border:2px solid yellow;
-    /*width: 100%;*/
 }
 
-.usp-article__project-grid {
+.article__project-grid {
     display: flex;
     justify-content:space-evenly;
     align-items: center;
     gap: 50px;
-    border:2px solid cornflowerblue;
     width: 100%;
 }
-.usp-article__project-grid_text-wrapper {
+.article__project-grid_text-wrapper {
     display: flex;
     flex-shrink: 0;
     max-width: 400px;
     flex-direction: column;
     text-align: left;
-    border:2px solid purple;
 }
-.usp-article__project-grid_text-wrapper img {
+.article__project-grid_text-wrapper img {
     width: 50px;
     height: 50px; /* Fixed height */
     object-fit: contain; /* Ensures the whole image fits */
     padding-bottom: 20px;
 }
-.usp-article__project-grid_text-wrapper p {
+.article__project-grid_text-wrapper p {
     color: var(--Grijs);
     padding-bottom: 20px;
 }
@@ -208,7 +204,7 @@ h1, h3 {
     text-transform: uppercase;
 }
 /*!* Draai het tweede artikel om *!*/
-.inner-container-project article:nth-child(even) {
+.inner-container-projecten article:nth-child(even) {
     flex-direction: row-reverse;
 }
 .image-wrapper img{
@@ -222,9 +218,10 @@ h1, h3 {
     max-width:600px;
     flex-grow: 0;
     flex-shrink: 1;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15); /* Schaduw voor de image-wrapper */
 }
-/*usp section*/
-.usp-section img{
+/*Service section*/
+.service-article img{
     width: 50px;
     margin: 16px 0;
 }
@@ -232,10 +229,10 @@ h1, h3 {
     width: 300px; /* Vaste breedte voor consistentie */
     height: 300px; /* Vaste hoogte */
     text-align: left;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); !* Schaduw voor de kaarten *!*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--Blauw);
     margin: 10px 10px 10px 10px;
     padding: 15px 15px 15px 15px;
-    border:2px solid red;
     box-sizing: border-box; /* Zorgt ervoor dat padding en border niet de grootte beïnvloeden */
 }
 
@@ -262,13 +259,14 @@ h1, h3 {
 }
 
 .inner-container--contactformulier-section{
-    border: 2px dashed brown;
     display: flex;
     max-width: 600px;
     width: 100%;
     flex-direction: column;
     align-content: center;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .inner-container--contactformulier-section h3,p{
     color: var(--Lichtgrijs);
@@ -306,7 +304,6 @@ label {
     padding: 10px; /* Add padding inside the textarea */
 }
 
-
 footer {
     padding: 10px 0;
     text-align: center;
@@ -321,3 +318,22 @@ footer p {
 
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
+@media screen and (max-width:1007px) {
+.header-content-wrapper{
+    flex-direction: column-reverse;
+    padding: 30px 0 60px 0;
+}
+.inner-container__usp-grid{
+    justify-content: center;
+}
+
+    .article__project-grid {
+        flex-direction: column;
+        justify-content:center;
+    }
+
+
+
+
+
+}
