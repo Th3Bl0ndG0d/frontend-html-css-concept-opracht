@@ -70,6 +70,7 @@ h1,h2,h3,h4,h5,h6{
 button{
     background-color: var(--Roze);
     border-radius: 20px;
+    text-transform: uppercase;
     border: none;
     color: var(--Lichtgrijs);
     padding:  12px 24px;
@@ -121,6 +122,9 @@ h1, h3 {
     color: var(--Lichtgrijs);
     font-weight: bold;
 }
+.header-content-text p{
+    padding-bottom: 20px;
+}
 .header-content-image {
     padding: 100px; /* Voegt ruimte binnen de container toe */
     filter: invert(100%) sepia(100%) saturate(500%) hue-rotate(200deg);
@@ -165,52 +169,66 @@ h1, h3 {
     padding-bottom: 100px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content:space-evenly;
+    gap:100px;
+    border:2px solid yellow;
     /*width: 100%;*/
 }
 
 .usp-article__project-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-evenly;
     align-items: center;
-    /*width: 100%;*/
+    gap: 50px;
+    border:2px solid cornflowerblue;
+    width: 100%;
 }
 .usp-article__project-grid_text-wrapper {
-    flex: 1;
-    max-width: 500px; /* Pas aan naar wens */
-    word-wrap: break-word; /* Voorkomt dat lange woorden over de container lopen */
-    overflow-wrap: break-word;
+    display: flex;
+    flex-shrink: 0;
+    max-width: 400px;
+    flex-direction: column;
+    text-align: left;
+    border:2px solid purple;
 }
-
-/* Draai het tweede artikel om */
+.usp-article__project-grid_text-wrapper img {
+    width: 50px;
+    height: 50px; /* Fixed height */
+    object-fit: contain; /* Ensures the whole image fits */
+    padding-bottom: 20px;
+}
+.usp-article__project-grid_text-wrapper p {
+    color: var(--Grijs);
+    padding-bottom: 20px;
+}
+.view-project{
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*!* Draai het tweede artikel om *!*/
 .inner-container-project article:nth-child(even) {
     flex-direction: row-reverse;
 }
-.img{
-     width: 100%;
+.image-wrapper img{
+    width: 100%; /* Zorgt ervoor dat de afbeelding schaalt */
+    height: auto;
+    display: block;
+    object-fit: cover; /* Voorkomt vervorming */
  }
 .image-wrapper{
-    flex-basis: 800px;
-    max-width: 800px;
+    min-width: 300px;
+    max-width:600px;
     flex-grow: 0;
     flex-shrink: 1;
-
 }
-/* Voor het tweede artikel (om de volgorde van tekst en afbeelding om te draaien) */
-.usp-article__project-grid_text-wrapper h3,
-.usp-article__project-grid_text-wrapper p {
-    margin: 0;
-    padding: 10px 0;
-}
-
-
 /*usp section*/
 .usp-section img{
     width: 50px;
     margin: 16px 0;
 }
-.usp-article{
+.service-article{
     width: 300px; /* Vaste breedte voor consistentie */
     height: 300px; /* Vaste hoogte */
     text-align: left;
@@ -221,7 +239,7 @@ h1, h3 {
     box-sizing: border-box; /* Zorgt ervoor dat padding en border niet de grootte beïnvloeden */
 }
 
-.inner-container__usp-grid{
+.inner-container__services-grid{
     flex-basis: 1200px;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -231,7 +249,7 @@ h1, h3 {
     gap: 20px;
     width: 100%;
 }
-.usp-article p {
+.service-article p {
     font-size: 12px; /* Kleinere tekstgrootte */
     padding-top: 10px; /* Ruimte boven de paragraaf */
     padding-bottom: 10px;
@@ -278,6 +296,16 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
 }
+#contact-us .form-group input {
+    height: 40px; /* Adjust the value as needed */
+    padding: 10px; /* Add padding to make the input feel larger */
+}
+
+#contact-us .form-group textarea {
+    height: 120px; /* Adjust textarea height */
+    padding: 10px; /* Add padding inside the textarea */
+}
+
 
 footer {
     padding: 10px 0;
